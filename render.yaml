@@ -1,0 +1,12 @@
+yaml
+
+services:
+  - type: worker
+    name: running-deals-finder
+    runtime: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
